@@ -3,11 +3,12 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   </head>
   <body>
     <script>
 
-      $(document).ready(function(){
+      /*$(document).ready(function(){
         var $body = $('body');
         $body.html('');
 
@@ -20,8 +21,33 @@
           index -= 1;
         }
 
-      });
+      });*/    
 
     </script>
+
+    <nav class="container">
+      <div class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+          <li class="navbar-header">
+            <a href="index.html" class="navbar-brand">Twittler</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div id="new-tweet">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="New tweet...">
+          <span class="input-group-btn">
+            <button class="btn btn-success" type="button"><span class="glyphicon glyphicon-chevron-down"></span></button>
+          </span>
+        </div>
+      </div>
+    </main>
+
+    <div class="fadeout"></div>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
