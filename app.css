@@ -1,0 +1,28 @@
+/* ----------- Body styling ----------- */
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+/* ----------- Navbar styling ----------- */
+
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.0);
+    border: none;
+}
+
+/* center-align navbar elements */
+@media (min-width: 500px) {
+    .navbar .navbar-nav {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav li {
+        float: none;
+        display: inline-block;
+    }
+}
+
+main.container {
+    max-width: 500px;
+}
