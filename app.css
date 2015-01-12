@@ -35,6 +35,7 @@ main.container {
 
 .tweet {
     margin-bottom: 1em;
+    color: #888888;
 }
 
 .tweet-at {
