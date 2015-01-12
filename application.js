@@ -29,7 +29,10 @@ $(document).ready(function() {
       $('.newest').remove();
     }
 
-    $('main').append(getNewest);
+    var $newest = getNewest();
+    $newest.css({"display": "none"});
+    $('main').append($newest);
+    $('.newest').slideDown();
   };
 
   showNewest();

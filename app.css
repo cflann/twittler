@@ -29,12 +29,20 @@ main.container {
 
 /* tweets styling */
 
-/*#tweet table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-}*/
+#new-tweet {
+    margin-bottom: 1.2em;
+}
+
+.tweet {
+    margin-bottom: 1em;
+}
+
+.tweet-at {
+    display: inline;
+}
+
+.tweet-date {
+    float: right;
+    display: inline;
+    text-align: right;
+}
