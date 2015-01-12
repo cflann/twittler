@@ -4,6 +4,19 @@ body {
     backround-repeat: repeat repeat;
 }
 
+main.container {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    box-shadow: black 0 0 40px;
+}
+
+@media (min-width: 500px) {
+    main.container {
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+}
+
 /* ----------- Title font ------------ */
 
 @font-face {
@@ -16,6 +29,7 @@ body {
 .navbar-brand {
     font-family: "Roddenberry";
     font-size: 3em;
+    text-shadow: black 0 0 4px;
 }
 
 .navbar-header {
@@ -29,16 +43,14 @@ body {
 }
 
 /* center-align navbar elements */
-@media (min-width: 500px) {
-    .navbar .navbar-nav {
-        width: 100%;
-        text-align: center;
-    }
+.navbar .navbar-nav {
+    width: 100%;
+    text-align: center;
+}
 
-    .navbar-nav li {
-        float: none;
-        display: inline-block;
-    }
+.navbar-nav li {
+    float: none;
+    display: inline-block;
 }
 
 main.container {
@@ -58,6 +70,7 @@ main.container {
 .tweet {
     margin-bottom: 1em;
     color: #aaaaaa;
+    text-shadow: #444444 0 0 4px;
 }
 
 .yellow-shirt .tweet-at {
