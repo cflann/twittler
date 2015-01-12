@@ -50,9 +50,35 @@ main.container {
     margin-bottom: 1.2em;
 }
 
+#new-tweet button {
+    background-color: #1b85b8;
+}
+
 .tweet {
     margin-bottom: 1em;
-    color: #888888;
+    color: #aaaaaa;
+}
+
+.yellow-shirt .tweet-at {
+    color: #a4aa5d;
+}
+.yellow-shirt .tweet-date {
+    color: #a3a582;
+}
+
+.blue-shirt .tweet-at {
+    color: #1b85b8;
+}
+.blue-shirt .tweet-date {
+    color: #5999b7;
+}
+
+.red-shirt .tweet-at {
+    color: #AE5A41;
+}
+
+.red-shirt .tweet-date {
+    color: #ad7b6d;
 }
 
 .tweet-at {
