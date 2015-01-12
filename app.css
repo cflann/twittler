@@ -1,6 +1,7 @@
 /* ----------- Body styling ----------- */
 body {
-    background-color: rgb(0, 0, 0);
+    background-image: url(images/star_background.jpg);
+    backround-repeat: repeat repeat;
 }
 
 /* ----------- Title font ------------ */
