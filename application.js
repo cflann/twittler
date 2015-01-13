@@ -11,16 +11,32 @@ $(document).ready(function() {
     var $tweet = $('<div></div>');
     $tweet.addClass('tweet');
     
-    var $at = $('<div></div>');
+    var $at = $('<a></a>');
     var $date = $('<div></div>');
     var $message = $('<div></div>');        
     $at.addClass('tweet-at');
     $date.addClass('tweet-date');
     $message.addClass('tweet-message');
 
-    $at.text('@' + tweet.user);
-    $at.on('click', function() {
-      // modal tweet list
+    var tweeter = tweet.user;
+    $at.text('@' + tweeter);
+    $at.on('click', function(event) {
+      event.stopPropagation();
+      var $modal = $('#myModal');      
+      var $modalBody = $modal.find('.modal-body');
+      $modalBody.text(''); // clear modal body
+      $modal.find('.modal-title').text(tweeter + "'s tweets");
+      var color = getNextColor();
+      for (var i = 0; i < streams.users[tweeter].length; i++) {
+        var $tweet = tweetDiv(streams.users[tweeter][i]);
+        $tweet.addClass(color);
+        $tweet.prependTo($modalBody);
+      }
+      var colorCode = $modalBody.children().first().find('.tweet-at').css('color');
+      $modal.find('button')
+        .css({'background-color': colorCode,
+              'color': '#ffffff'});
+      $modal.modal('show');     
     });
     $date.text('Star Date: ' + tweet.created_at);
     $message.text(tweet.message);
@@ -51,7 +67,13 @@ $(document).ready(function() {
     var $newest = get10Newest();
     $newest.css({"display": "none"});
     $('main').append($newest);
-    $('.newest').slideDown();
+    $('.newest')
+      .css('opacity', 0)
+      .slideDown('slow')
+      .animate(
+        { opacity: 1 },
+        { queue: false, duration: 'slow' }
+      );
   };
 
   show10Newest();
@@ -62,10 +84,17 @@ $(document).ready(function() {
     $tweet.css('display', 'none');
     $('#new-tweet').after($tweet);
     
-    $tweet.slideDown();
+    $tweet
+      .css('opacity', 0)
+      .slideDown('slow')
+      .animate(
+        { opacity: 1 },
+        { queue: false, duration: 'slow' }
+      );
     
-    var $tweets = $('.tweet');
+    var $tweets = $('main .tweet');
     if ($tweets.length > 20) {
+      $tweets.last().fadeOut();
       $tweets.last().remove();
     }
   };
@@ -76,7 +105,6 @@ $(document).ready(function() {
   $('#new-tweet').on('click', 'button', function() {
     var $input = $('#new-tweet').find('input');
     var message = $input.val();
-    //updateTweets();
     updateTweets();
     writeTweet(message);
     $addTweet(streams.home[streams.home.length-1]);
