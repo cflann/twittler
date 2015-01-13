@@ -73,9 +73,8 @@ main.container {
 }
 
 .tweet {
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     color: #888888;
-/*    text-shadow: #444444 0 0 4px;*/
 }
 
 .yellow-shirt .tweet-at {
@@ -111,6 +110,10 @@ main.container {
     display: inline;
     font-size: 12px;
     text-align: right;
+}
+
+.tweet-message {
+    margin-top: .15em;
 }
 
 /* ----------- Modal styling ------------- */
