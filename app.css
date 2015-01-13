@@ -24,6 +24,11 @@ main.container {
     src: url("fonts/Roddenberry.ttf") format("truetype");
 }
 
+/* ----------- alert ----------- */
+.alert {
+    display: none;
+}
+
 /* ----------- Navbar styling ----------- */
 
 .navbar-brand {

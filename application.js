@@ -101,15 +101,23 @@ $(document).ready(function() {
 
   window.visitor = "visitor";
   streams.users.visitor = [];
+
+  $('.alert').on('click', 'button', function() {
+    $(this).closest('.alert').hide();
+  });
   
   $('#new-tweet').on('click', 'button', function() {
     var $input = $('#new-tweet').find('input');
-    var message = $input.val();
-    updateTweets();
-    writeTweet(message);
-    $addTweet(streams.home[streams.home.length-1]);
-    streams.home[streams.home.length-1].shown = true;
-    $input.val('');    
+    if ($input.val() === '') {
+      $('.alert').fadeIn('fast');
+    } else {
+      var message = $input.val();
+      updateTweets();
+      writeTweet(message);
+      $addTweet(streams.home[streams.home.length-1]);
+      streams.home[streams.home.length-1].shown = true;
+      $input.val('');
+    }
   });
 
   function updateTweets() {
