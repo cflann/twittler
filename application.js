@@ -38,7 +38,7 @@ $(document).ready(function() {
               'color': '#ffffff'});
       $modal.modal('show');     
     });
-    $date.text('Star Date: ' + tweet.created_at);
+    $date.text(/*'Star Date: ' + */moment(tweet.created_at).fromNow());
     $message.text(tweet.message);
     $tweet.append($at, $date, $message);
     return $tweet;
